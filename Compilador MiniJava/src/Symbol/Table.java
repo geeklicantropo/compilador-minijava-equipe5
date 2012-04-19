@@ -1,11 +1,11 @@
 package Symbol;
 
 public class Table {
-	final int SIZE = 512;
+	final int SIZE = 256;
 	Binder table[] = new Binder[SIZE];
 	Binder top; 
 	Symbol marcador = Symbol.symbol("#m");
-	java.util.Enumeration keys;
+//	java.util.Enumeration keys;
 		
 	public void put(Symbol key, Object value) {
 		int index=key.hashCode()%SIZE;
@@ -14,7 +14,7 @@ public class Table {
 	}
 	
 	public Object get(Symbol key) {
-		int index = key.hashCode();
+		int index = key.hashCode()%SIZE;
 		for (Binder b = table[index]; b!=null; b=b.next) {
 			if (key.equals(b.key)) 
 				return b;
@@ -28,7 +28,7 @@ public class Table {
 	
 	public void endScope() {
 		while(top.key!=marcador) {
-			int index = top.key.hashCode();
+			int index = top.key.hashCode()%SIZE;
 			for (Binder b = table[index]; b!=null; b=b.next) {
 				if (top.key.equals(b.key)) {
 					b = b.next;
@@ -40,7 +40,7 @@ public class Table {
 		top = top.next;
 	}
 	
-	public java.util.Enumeration keys() {
-		return keys;
-	}
+//	public java.util.Enumeration keys() {
+//		return keys;
+//	}
 }
