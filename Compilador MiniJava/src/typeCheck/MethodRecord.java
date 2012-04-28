@@ -15,4 +15,8 @@ public class MethodRecord {
 	public void addParametro(String ident, String tipo) {
 		parametros.put(Symbol.symbol(ident), tipo);
 	}
+	
+	public String getNome() {
+		return nome.toString();
+	}
 }
