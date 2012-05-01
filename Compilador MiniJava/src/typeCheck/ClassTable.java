@@ -11,12 +11,15 @@ class ClassTable {
 		table = new Vector<ClassRecord>();
 	}
 	
-	public void addClass(String nome, String pai, MethodTable mt, boolean eEstatico) {
+	public void addClassRecord(ClassRecord novo) {
+		table.add(novo);
+	}
+	
+	public void addClass(String nome, String pai, MethodTable mt) {
 		ClassRecord cR = new ClassRecord();
 		cR.nome = Symbol.symbol(nome);
 		cR.pai = pai;
 		cR.mt = mt;
-		cR.eEstatico = eEstatico;
 		table.add(cR);
 	}
 	

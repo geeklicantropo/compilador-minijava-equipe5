@@ -7,6 +7,7 @@ public class MethodRecord {
 	Symbol nome;
 	String tipo;
 	EconomicTable parametros;
+	boolean eEstatico;
 	
 	public MethodRecord() {
 		parametros = new EconomicTable();

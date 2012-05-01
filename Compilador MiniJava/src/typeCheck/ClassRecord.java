@@ -7,7 +7,6 @@ public class ClassRecord {
 	Symbol nome;
 	String pai;
 	MethodTable mt;
-	boolean eEstatico;
 	EconomicTable atributos;
 	
 	public ClassRecord() {
