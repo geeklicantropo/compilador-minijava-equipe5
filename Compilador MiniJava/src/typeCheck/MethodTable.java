@@ -11,6 +11,10 @@ public class MethodTable {
 		table = new Vector<MethodRecord>();
 	}
 	
+	public void addMethodRecord(MethodRecord novo) {
+		table.add(novo);
+	}
+	
 	public void addMethod(String nome, String tipo) {
 		MethodRecord mR = new MethodRecord();
 		mR.nome = Symbol.symbol(nome);
