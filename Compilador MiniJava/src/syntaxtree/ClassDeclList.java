@@ -2,6 +2,8 @@ package syntaxtree;
 
 import java.util.Vector;
 
+import visitor.TranslateVisitor;
+
 public class ClassDeclList {
    private Vector list;
 
