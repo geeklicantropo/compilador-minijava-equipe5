@@ -1,4 +1,5 @@
 package syntaxtree;
+import visitor.TranslateVisitor;
 import visitor.Visitor;
 import visitor.TypeVisitor;
 
@@ -14,5 +15,9 @@ public class IdentifierExp extends Exp {
 
   public Type accept(TypeVisitor v) {
     return v.visit(this);
+  }
+  
+  public Translate.Exp accept(TranslateVisitor v){
+	  return v.visit(this);
   }
 }
