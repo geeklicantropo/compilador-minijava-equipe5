@@ -47,7 +47,6 @@ import Symbol.Binder;
 import Symbol.Symbol;
 import Symbol.Table;
 import Temp.Label;
-import Temp.LabelList;
 import Temp.Temp;
 import Tree.BINOP;
 import Tree.CALL;
@@ -213,7 +212,7 @@ public class Translate implements TranslateVisitor {
                 return new Nx(new SEQ( new CJUMP(CJUMP.LT, n.e.accept(this).unEx(), new CONST(1), t, f),
                 	new SEQ(new LABEL(f), 
                 			new SEQ( n.s2.accept(this).unNx(),
-                				new SEQ( new JUMP(new NAME(join),new LabelList(join,null)),
+                				new SEQ( new JUMP(new NAME(join),new List<Label>(join,null)),
                 					new SEQ(new LABEL(t),new SEQ(n.s1.accept(this).unNx(), 
                 						new LABEL(join))))))));
         }
