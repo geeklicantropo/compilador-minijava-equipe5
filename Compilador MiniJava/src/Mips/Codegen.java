@@ -12,11 +12,11 @@ public class Codegen {
         
         private List<Assem.Instr> ilist=null, last=null;
         
-        private void emit(Assem.Instr inst) {
-                if (last!=null)
-                        last = last.tail = new List<Assem.Instr>(inst,null);
-                else last = ilist = new List<Assem.Instr>(inst,null);
-        }
+//        private void emit(Assem.Instr inst) {
+//                if (last!=null)
+//                        last = last.tail = new List<Assem.Instr>(inst,null);
+//                else last = ilist = new List<Assem.Instr>(inst,null);
+//        }
         
         void munchStm(Tree.Stm s) {
 
