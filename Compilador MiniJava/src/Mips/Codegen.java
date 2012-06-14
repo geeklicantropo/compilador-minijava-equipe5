@@ -11,6 +11,7 @@ public class Codegen {
         }
         
         private List<Assem.Instr> ilist=null, last=null;
+
         
 //        private void emit(Assem.Instr inst) {
 //                if (last!=null)
