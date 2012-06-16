@@ -11,7 +11,7 @@ public class Frag {
     public Frag(Frame frame, Stm treeStm){
     	this.frame = frame;
         this.treeStm = new List<Stm>(treeStm, null);
-    }//fim construtor
+    }
 
     public List<Stm> getBody() {
     	return treeStm;

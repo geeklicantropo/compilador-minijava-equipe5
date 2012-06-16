@@ -95,7 +95,6 @@ public class Translate implements TranslateVisitor {
         public Exp visit(MainClass n) {
         	currClass = n.i1.s;
             symbolTable.beginScope();
-//            symbolTable.put(Symbol.symbol(n.i1.s), n.i1.s);
             currFrame = frame.newFrame(Symbol.symbol(n.i1 + "$" + "public static void main"), 
             		new InterfaceMips<Boolean>(new List<Boolean>(Boolean.valueOf(false), null)).ll);
             addFrag(n.s.accept(this).unNx());
@@ -107,7 +106,6 @@ public class Translate implements TranslateVisitor {
         public Exp visit(ClassDeclSimple n) {
            currClass=n.i.s; 
            symbolTable.beginScope();
-//           symbolTable.put(Symbol.symbol(n.i.s), n);
            for(int i=0;i<n.vl.size();i++) 
                n.vl.elementAt(i).accept(this);
 	       for(int i=0;i<n.ml.size();i++) 
@@ -120,11 +118,10 @@ public class Translate implements TranslateVisitor {
         public Exp visit(ClassDeclExtends n) {
 	        currClass=n.i.s;    
 	        symbolTable.beginScope();
-//	        symbolTable.put(Symbol.symbol(n.i.s), n);
 	        for(int i=0;i<n.ml.size();i++) 
 	        	n.ml.elementAt(i).accept(this);
 	        symbolTable.endScope();
-	        currClass="";
+	        currClass=""; 
 	        return null;
         }
 
