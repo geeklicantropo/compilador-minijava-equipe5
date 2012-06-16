@@ -86,7 +86,7 @@ public class TraceSchedule {
        table.put(((Tree.LABEL)l.head.head).label, l.head);
     stms=getNext();
     table=null;
-  }        
+  }
 }
 
 

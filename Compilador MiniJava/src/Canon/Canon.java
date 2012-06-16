@@ -1,6 +1,9 @@
 package Canon;
 
 import List.List;
+import Translate.Frag;
+import Translate.FragList;
+import Tree.Stm;
 
 class MoveCall extends Tree.Stm {
   Tree.TEMP dst;
@@ -136,4 +139,24 @@ public class Canon {
  static public List<Tree.Stm> linearize(Tree.Stm s) {
     return linear(do_stm(s), null);
  }
+ 
+	public static FragList canonlize(FragList frags ) {
+		for(int i = 0 ; i < frags.size(); i++){
+			Frag f = frags.get(i);
+			f.setBody( Canon.linearize(f.getBody().head));
+		}
+		return frags;
+	}
+	
+	public static List<Stm> generateCode(StmListList list){
+		List<Stm> stml = null;
+		StmListList aux;
+		for(aux = list; aux!= null; aux = (StmListList) aux.tail){
+			List<Stm> aux2 = aux.head;
+			for(; aux2!= null; aux2 = (List<Stm>) aux2.tail){
+				stml = new List<Stm>(aux2.head, stml);
+			}
+		}
+		return stml;
+	}
 }

@@ -144,5 +144,11 @@ public class Print {
 
   public void prStm(Stm s) {prStm(s,0); say("\n");}
   public void prExp(Exp e) {prExp(e,0); say("\n");}
+  public void prStmList(List<Stm> ls) {
+	  List<Stm> iterator;
+	  for (iterator=ls; iterator!=null; iterator=iterator.tail ) {
+		  prStm(iterator.head);
+	  }
+  }
 
 }

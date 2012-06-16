@@ -2,7 +2,6 @@ package Frame;
 
 import java.util.LinkedList;
 
-import List.List;
 import Symbol.Symbol;
 import Temp.Label;
 import Temp.Temp;
@@ -17,6 +16,11 @@ public abstract class Frame implements TempMap {
     public abstract Temp FP();
     public abstract Temp RV();
     public abstract Tree.Exp externalCall(String func, LinkedList<Tree.Exp> args);
-    public abstract String tempMap(Temp temp);
-//    abstract public procEntryExit2(List<Assem.Instr> body);
+//    public abstract String tempMap(Temp temp);
+//    public abstract Temp[] registers();
+//    public abstract Tree.Exp externallCall(String func, List<Tree.Exp> args);
+//    public abstract Tree.Stm procEntryExit1(Tree.Stm body);
+//    public abstract List<Assem.Instr> procEntryExit2(List<Assem.Instr> body);
+//    abstract public Proc procEntryExit3(List<Assem.Instr> body);
+//    abstract public List<Assem.Instr> codegen(Tree.Stm stm);
 }
