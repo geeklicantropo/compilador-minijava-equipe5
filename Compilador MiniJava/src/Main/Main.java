@@ -12,9 +12,9 @@ import Assem.Instr;
 import Canon.BasicBlocks;
 import Canon.Canon;
 import Canon.StmListList;
-import Canon.TraceSchedule;
 import Frame.Frame;
 import List.List;
+import Mips.CodegenHelper;
 import Mips.MipsFrame;
 import Parser.MiniJavaParser;
 import Parser.ParseException;
@@ -87,8 +87,7 @@ public class Main {
             Program root = MiniJavaParser.Program();
 			root.accept(new PrettyPrintVisitor());
 			
-			// Checagem de tipos
-			System.out.println("Pendente.");
+			// Checagem de tipos está pendente
 			
 			// Representação Intermediária
 			frame = new MipsFrame();
@@ -116,9 +115,16 @@ public class Main {
 					if(aux.tail!=null) System.out.println("----------------------------");
 				}
 				
-				in.close();
+				System.out.println("\nSeleção de Instruções: ");
+				List<Instr> inst = CodegenHelper.codegen(Canon.generateCode(stml), frame);
+				List<Instr> auxx;
+				for (auxx=inst; auxx!=null; auxx=auxx.tail) {
+					System.out.println(auxx.head.assem);
+				}
+				System.out.println("-----------------------");
+
 				
-								
+				in.close();
 				System.out.println("---FIM DO FRAG "+i+"---");
 				
 			}
